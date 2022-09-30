@@ -24,12 +24,15 @@ router.get("/:roomId", async (req, res) => {
 router.post("/:roomId", async (req, res) => {
   try {
     const chat = await Chat.create({
-      sessionId: req.session.UserId,
+      sessionId: req.session.userId,
       content: req.body.content,
       roomId: req.params.roomId,
     });
 
-    /*TODO: socket*/
+    const io = req.app.get("io");
+
+    io.of("/chat").to(req.params.roomId).emit("chat", chat);
+
     res.json({ message: "OK" });
   } catch (error) {}
 });
