@@ -6,18 +6,23 @@ import reportWebVitals from "./reportWebVitals";
 
 import theme from "./theme";
 
+import {QueryClientProvider, QueryClient} from "react-query"
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "@emotion/react";
+
+const client = new QueryClient();
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
+  <QueryClientProvider client={client}>
   <BrowserRouter>
     <ThemeProvider theme={theme}>
       <App />
     </ThemeProvider>
   </BrowserRouter>
+  </QueryClientProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

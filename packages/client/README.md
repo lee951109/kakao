@@ -1,46 +1,18 @@
-# Getting Started with Create React App
+# ⭐️ React ⭐️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> 공부하면서 모르는 것 정리!
 
-## Available Scripts
+## react-query
 
-In the project directory, you can run:
+> react-query는 서버의 값을 클라이언트에 가져오거나, 캐싱, 값 업데이트, 에러핸들링 등 비동기 과정을 더욱 편하게 하는데 사용된다.
 
-### `npm start`
+### useMutation ❗️
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> useMutation은 <span style="color:#6699FF">React Query를 이용해 서버에 데이터 변경 작업을
+> 요청할 때 사용 </span>한다. <br/>
+> 데이터 조회를 할 때는 <span style="color:yellowgreen"> useQuery</span> 를 사용한다.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- mutationFn은 mutation Function으로<span style="color:#6699FF"> promise 처리가 이루어지는 함수 </span>이다.
+  다른 말로는 axios를 이용해 서버에 API를 요청하는 부분이라고 생각할 수 있다.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- mutate는 <span style="color:#6699FF"> useMutataion을 이용해 작성한 내용들이 실핼될 수 있도록 도와주는 trigger 역할 </span>을 한다. 즉, useMutation을 정의 해둔 뒤 이벤트가 발생되었을 대 mutate를 사용해주면 된다.
