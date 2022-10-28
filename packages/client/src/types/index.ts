@@ -13,7 +13,7 @@ export interface IUser {
 }
 
 export interface IRoom {
-  id: string;
+  id: number;
   opponentId: string;
   userId: string;
   user: IUser;
